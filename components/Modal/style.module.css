@@ -1,0 +1,8 @@
+.Modal {
+  min-width: 20rem;
+  max-width: 85%;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--modal-background-rgb));
+  padding: 2rem;
+  box-shadow: 0 0 0.5rem rgb(var(--foreground-rgb));
+}
