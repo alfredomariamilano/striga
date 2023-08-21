@@ -1,4 +1,5 @@
 'use client'
+import { CopyToClipboard } from '@/components/CopyToClipboard'
 import { QRCode } from '@/components/QRCode'
 import { useLastTransactionStore } from '@/store/lastTransactionStore'
 import { type Transaction } from '@/utils/types'
@@ -43,14 +44,22 @@ export default function TestPage() {
   }, [lastTransaction?.expiry])
 
   return (
-    <>
+    <section>
       {expiresIn > 0 ? (
         <h1>Expires in: {formatTime(expiresIn)}</h1>
       ) : (
         <h1>Expired</h1>
       )}
 
-      <QRCode string={lastTransaction?.invoice!} />
-    </>
+      <br />
+
+      <div className="flex items-center justify-center">
+        <QRCode string={lastTransaction?.invoice!} />
+      </div>
+
+      <br />
+
+      <CopyToClipboard valueToCopy={lastTransaction?.invoice!} />
+    </section>
   )
 }
