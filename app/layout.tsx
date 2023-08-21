@@ -1,8 +1,8 @@
 import { Modal } from '@/components/Modal'
 import './globals.css'
+import './globals.shadcn.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Link from 'next/link'
 import { Header } from '@/components/Header'
 
 const inter = Inter({ subsets: ['latin'] })

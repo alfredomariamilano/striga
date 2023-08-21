@@ -4,6 +4,8 @@ import { useLastTransactionStore } from '@/store/lastTransactionStore'
 import { Transaction, type ExchangeRates } from '@/utils/types'
 import { useRouter } from 'next/navigation'
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 
 const UPDATE_INTERVAL = 10000
 
@@ -76,10 +78,10 @@ export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center">
       <h3>Create a Bitcoin Lightning Network Invoice</h3>
-
+      <br />
       <div>
         <h4>EUR</h4>
-        <input
+        <Input
           className="focus:outline-none"
           type="number"
           style={{
@@ -91,11 +93,13 @@ export default function Home() {
             setValueEUR(() => e.target.valueAsNumber)
           }}
         />
+        <br />
         <hr />
+        <br />
         <h4>
           BTC <small>(next update in {nextUpdatedRate / 1000}s)</small>
         </h4>
-        <input
+        <Input
           className="focus:outline-none"
           type="number"
           style={{
@@ -108,7 +112,9 @@ export default function Home() {
         />
       </div>
 
-      <button onClick={createInvoice}>Create Invoice</button>
+      <br />
+
+      <Button onClick={createInvoice}>Create Invoice</Button>
     </section>
   )
 }

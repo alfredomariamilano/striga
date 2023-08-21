@@ -9,8 +9,8 @@ export async function POST(req: Request) {
       userId: process.env.TEST_USER_ID,
       accountId: '4677a5192e11a061faa80a08c6416363',
       amount,
-      ttl: 1440,
-      // ttl: 10,
+      // ttl: 1440,
+      ttl: 10,
     }
 
     const body = JSON.stringify(bodyObject)
