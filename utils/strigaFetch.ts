@@ -42,5 +42,7 @@ export const strigaFetch = (url: RequestInfo | URL, options: RequestInit) => {
 
   options.cache = 'no-store'
 
+  options.next = { revalidate: 0 }
+
   return fetch(`${STRIGA_BASE_URL}${url}`, options).then((res) => res.json())
 }

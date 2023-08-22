@@ -49,7 +49,7 @@ export default function Home() {
       controller = new AbortController()
       const signal = controller.signal
 
-      fetch('/api/exchange-rates', { signal, cache: 'no-store' })
+      fetch('/api/exchange-rates', { signal })
         .then((res) => res.json())
         .then((res: ExchangeRates) => {
           setExchangeRateBTCEUR(() => res.BTCEUR)
