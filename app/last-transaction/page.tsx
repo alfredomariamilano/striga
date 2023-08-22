@@ -116,7 +116,9 @@ export default function TestPage() {
     <section>
       {completedTransaction && userWallet ? (
         <>
-          <h1 className="pt-2 pb-2">Transaction completed!</h1>
+          <h1 className="pt-2 pb-2">
+            Transaction {lastTransaction?.id} completed!
+          </h1>
           <h1 className="pt-2 pb-2">
             Current BTC balance:{' '}
             <span className="text-green-600">
@@ -127,6 +129,10 @@ export default function TestPage() {
         </>
       ) : (
         <>
+          <h1 className="pt-2 pb-2">Almost done!</h1>
+          <p className="pt-2 pb-2">
+            Send BTC using this Bitcoin Lightning Network Invoice id
+          </p>
           <div className="flex items-center justify-center pt-2 pb-2">
             <QRCode string={lastTransaction?.invoice!} />
           </div>
@@ -134,6 +140,10 @@ export default function TestPage() {
           <h1 className="pt-2 pb-2 text-red-600">
             {expiresIn > 0 ? `Expires in: ${formatTime(expiresIn)}` : `Expired`}
           </h1>
+
+          <p className="pt-2 pb-2">
+            Striga transaction ID: {lastTransaction?.id}
+          </p>
 
           <div className="pt-2 pb-2">
             <CopyToClipboard valueToCopy={lastTransaction?.invoice!} />
