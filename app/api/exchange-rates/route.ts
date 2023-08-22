@@ -1,10 +1,10 @@
 import { strigaFetch } from '@/utils/strigaFetch'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
-export async function GET(req: Request) {
+export async function GET(req: NextRequest) {
   try {
     // trick vercel
-    new URL(req.url)
+    const _trick = req.cookies.get('token')
     const exchangeRates = await strigaFetch('/trade/rates', { method: 'POST' })
 
     return NextResponse.json(exchangeRates)

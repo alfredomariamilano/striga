@@ -1,8 +1,11 @@
 import { strigaFetch } from '@/utils/strigaFetch'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
-export async function GET(req: Request) {
+export async function GET(req: NextRequest) {
   try {
+    // trick vercel
+    const _trick = req.cookies.get('token')
+
     const user = await strigaFetch(`/user/${process.env.TEST_USER_ID}`, {
       method: 'GET',
     })

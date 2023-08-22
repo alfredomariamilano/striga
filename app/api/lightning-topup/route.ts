@@ -1,8 +1,11 @@
 import { strigaFetch } from '@/utils/strigaFetch'
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
   try {
+    // trick vercel
+    const _trick = req.cookies.get('token')
+
     const { amount } = await req.json()
 
     const bodyObject = {
