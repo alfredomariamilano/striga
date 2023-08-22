@@ -4,9 +4,14 @@ import { NextResponse } from 'next/server'
 export async function GET(req: Request) {
   try {
     const exchangeRates = await strigaFetch('/trade/rates', { method: 'POST' })
-
-    return NextResponse.json(exchangeRates)
+    /* @ts-ignore */
+    return (Response as unknown as NextResponse).json(exchangeRates)
   } catch (error) {
-    return NextResponse.json({ error }, { status: 500 })
+    /* @ts-ignore */
+    return (Response as unknown as NextResponse).json(
+      /* @ts-ignore */
+      { error },
+      { status: 500 },
+    )
   }
 }
