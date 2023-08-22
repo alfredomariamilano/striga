@@ -17,10 +17,6 @@ export async function GET(req: Request) {
       body,
     })
 
-    console.log('====================================')
-    console.log(wallets)
-    console.log('====================================')
-
     return NextResponse.json(wallets)
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 })

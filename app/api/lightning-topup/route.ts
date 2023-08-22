@@ -22,9 +22,6 @@ export async function POST(req: Request) {
         body,
       },
     )
-    console.log('====================================')
-    console.log(lightningTopup)
-    console.log('====================================')
 
     return NextResponse.json(lightningTopup)
   } catch (error) {

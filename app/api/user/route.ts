@@ -7,10 +7,6 @@ export async function GET(req: Request) {
       method: 'GET',
     })
 
-    console.log('====================================')
-    console.log(user)
-    console.log('====================================')
-
     return NextResponse.json(user)
   } catch (error) {
     return NextResponse.json({ error }, { status: 500 })

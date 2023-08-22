@@ -128,3 +128,210 @@ export interface ExchangeRates {
     currency: string
   }
 }
+
+export interface Wallet {
+  walletId: string
+  accounts: {
+    BUSD: {
+      accountId: string
+      parentWalletId: string
+      currency: string
+      ownerId: string
+      ownerType: string
+      createdAt: string
+      availableBalance: {
+        amount: string
+        currency: string
+      }
+      linkedCardId: string
+      status: string
+      permissions: [string]
+      enriched: boolean
+    }
+    string: {
+      accountId: string
+      parentWalletId: string
+      currency: string
+      ownerId: string
+      ownerType: string
+      createdAt: string
+      availableBalance: {
+        amount: string
+        currency: string
+      }
+      linkedCardId: string
+      status: string
+      permissions: [string]
+      enriched: boolean
+    }
+    USDC: {
+      accountId: string
+      parentWalletId: string
+      currency: string
+      ownerId: string
+      ownerType: string
+      createdAt: string
+      availableBalance: {
+        amount: string
+        currency: string
+      }
+      linkedCardId: string
+      status: string
+      permissions: [string]
+      enriched: boolean
+    }
+    BTC: {
+      accountId: string
+      parentWalletId: string
+      currency: string
+      ownerId: string
+      ownerType: string
+      createdAt: string
+      availableBalance: {
+        amount: string
+        currency: string
+      }
+      linkedCardId: string
+      blockchainDepositAddress: string
+      blockchainNetwork: {
+        name: string
+      }
+      status: string
+      permissions: [string]
+      enriched: boolean
+    }
+    USDT: {
+      accountId: string
+      parentWalletId: string
+      currency: string
+      ownerId: string
+      ownerType: string
+      createdAt: string
+      availableBalance: {
+        amount: string
+        currency: string
+      }
+      linkedCardId: string
+      status: string
+      permissions: [string]
+      enriched: boolean
+    }
+    UNI: {
+      accountId: string
+      parentWalletId: string
+      currency: string
+      ownerId: string
+      ownerType: string
+      createdAt: string
+      availableBalance: {
+        amount: string
+        currency: string
+      }
+      linkedCardId: string
+      status: string
+      permissions: [string]
+      enriched: boolean
+    }
+    LINK: {
+      accountId: string
+      parentWalletId: string
+      currency: string
+      ownerId: string
+      ownerType: string
+      createdAt: string
+      availableBalance: {
+        amount: string
+        currency: string
+      }
+      linkedCardId: string
+      status: string
+      permissions: [string]
+      enriched: boolean
+    }
+    MATIC: {
+      accountId: string
+      parentWalletId: string
+      currency: string
+      ownerId: string
+      ownerType: string
+      createdAt: string
+      availableBalance: {
+        amount: string
+        currency: string
+      }
+      linkedCardId: string
+      status: string
+      permissions: [string]
+      enriched: boolean
+    }
+    ETH: {
+      accountId: string
+      parentWalletId: string
+      currency: string
+      ownerId: string
+      ownerType: string
+      createdAt: string
+      availableBalance: {
+        amount: string
+        currency: string
+      }
+      linkedCardId: string
+      status: string
+      permissions: [string]
+      enriched: boolean
+    }
+    BNB: {
+      accountId: string
+      parentWalletId: string
+      currency: string
+      ownerId: string
+      ownerType: string
+      createdAt: string
+      availableBalance: {
+        amount: string
+        currency: string
+      }
+      linkedCardId: string
+      status: string
+      permissions: [string]
+      enriched: boolean
+    }
+    EUR: {
+      accountId: string
+      parentWalletId: string
+      currency: string
+      ownerId: string
+      ownerType: string
+      createdAt: string
+      availableBalance: {
+        amount: string
+        currency: string
+      }
+      linkedCardId: string
+      linkedBankAccountId: string
+      status: string
+      permissions: [string]
+      enriched: boolean
+    }
+    SUSHI: {
+      accountId: string
+      parentWalletId: string
+      currency: string
+      ownerId: string
+      ownerType: string
+      createdAt: string
+      availableBalance: {
+        amount: string
+        currency: string
+      }
+      linkedCardId: string
+      status: string
+      permissions: [string]
+      enriched: boolean
+    }
+  }
+  syncedOwnerId: string
+  ownerType: string
+  createdAt: string
+  comment: string
+}

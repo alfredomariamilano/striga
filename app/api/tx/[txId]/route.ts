@@ -21,9 +21,6 @@ export async function GET(
         body,
       },
     )
-    console.log('====================================')
-    console.log(txStatus)
-    console.log('====================================')
 
     return NextResponse.json(txStatus)
   } catch (error) {
