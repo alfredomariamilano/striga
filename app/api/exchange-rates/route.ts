@@ -3,15 +3,12 @@ import { NextResponse } from 'next/server'
 
 export async function GET(req: Request) {
   try {
+    // trick vercel
+    new URL(req.url)
     const exchangeRates = await strigaFetch('/trade/rates', { method: 'POST' })
-    /* @ts-ignore */
-    return (Response as unknown as NextResponse).json(exchangeRates)
+
+    return NextResponse.json(exchangeRates)
   } catch (error) {
-    /* @ts-ignore */
-    return (Response as unknown as NextResponse).json(
-      /* @ts-ignore */
-      { error },
-      { status: 500 },
-    )
+    return NextResponse.json({ error }, { status: 500 })
   }
 }
