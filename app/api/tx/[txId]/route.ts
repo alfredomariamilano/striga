@@ -1,5 +1,6 @@
 import { strigaFetch } from '@/utils/strigaFetch'
 import { NextRequest, NextResponse } from 'next/server'
+import { cookies } from 'next/headers'
 
 export async function GET(
   req: NextRequest,
@@ -7,7 +8,7 @@ export async function GET(
 ) {
   try {
     // trick vercel
-    const _trick = req.cookies.get('token')
+    cookies()
     const bodyObject = {
       userId: process.env.TEST_USER_ID,
       accountId: '4677a5192e11a061faa80a08c6416363',
