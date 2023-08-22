@@ -16,8 +16,15 @@ export default function Home() {
     (state) => state.setLastTransaction,
   )
   const [valueEUR, setValueEUR] = useState<number>(100)
-  const [exchangeRateBTCEUR, setExchangeRateBTCEUR] =
-    useState<ExchangeRates['BTCEUR']>()
+  const [exchangeRateBTCEUR, setExchangeRateBTCEUR] = useState<
+    ExchangeRates['BTCEUR']
+  >({
+    price: '1',
+    buy: '1',
+    sell: '1',
+    timestamp: 0,
+    currency: 'BTC',
+  })
   const valueBTC = useMemo(() => {
     return valueEUR / Number(exchangeRateBTCEUR?.price)
   }, [valueEUR, exchangeRateBTCEUR])
@@ -42,7 +49,7 @@ export default function Home() {
       controller = new AbortController()
       const signal = controller.signal
 
-      fetch('/api/exchange-rates', { signal })
+      fetch('/api/exchange-rates', { signal, cache: 'no-store' })
         .then((res) => res.json())
         .then((res: ExchangeRates) => {
           setExchangeRateBTCEUR(() => res.BTCEUR)
